@@ -1,0 +1,10 @@
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\bin\Debug\QuarkCotizador.exe.config
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\bin\Debug\QuarkCotizador.exe
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\bin\Debug\QuarkCotizador.pdb
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.csproj.AssemblyReference.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.Form1.resources
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.Properties.Resources.resources
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.csproj.GenerateResource.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.csproj.CoreCompileInputs.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.exe
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\QuarkCotizador\obj\Debug\QuarkCotizador.pdb
