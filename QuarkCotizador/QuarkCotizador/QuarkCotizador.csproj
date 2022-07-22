@@ -46,24 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Historial_Vendedores.cs">
+    <Compile Include="Iinterfaces\IView.cs" />
+    <Compile Include="modelo\CotizadorModel.cs" />
+    <Compile Include="presenter\CotizadorPresenter.cs" />
+    <Compile Include="vista\Historial_Vendedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Historial_Vendedores.Designer.cs">
+    <Compile Include="vista\Historial_Vendedores.Designer.cs">
       <DependentUpon>Historial_Vendedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="vista\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="vista\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Historial_Vendedores.resx">
+    <EmbeddedResource Include="vista\Historial_Vendedores.resx">
       <DependentUpon>Historial_Vendedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="vista\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,5 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
