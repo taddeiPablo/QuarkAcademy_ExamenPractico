@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarkCotizador", "QuarkCotizador\QuarkCotizador.csproj", "{318538EC-BF12-41CD-8ACC-ACEE633712CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cotizador_Entity_Library", "Cotizador_Entity_Library\Cotizador_Entity_Library.csproj", "{DBDD30EC-6ACC-4412-B4DC-66022B9506EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cotizador_Entities_Library", "Cotizador_Entities_Library\Cotizador_Entities_Library.csproj", "{B51F8413-F847-4794-8347-7639E69BF262}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{318538EC-BF12-41CD-8ACC-ACEE633712CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318538EC-BF12-41CD-8ACC-ACEE633712CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318538EC-BF12-41CD-8ACC-ACEE633712CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBDD30EC-6ACC-4412-B4DC-66022B9506EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBDD30EC-6ACC-4412-B4DC-66022B9506EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBDD30EC-6ACC-4412-B4DC-66022B9506EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBDD30EC-6ACC-4412-B4DC-66022B9506EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51F8413-F847-4794-8347-7639E69BF262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51F8413-F847-4794-8347-7639E69BF262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51F8413-F847-4794-8347-7639E69BF262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51F8413-F847-4794-8347-7639E69BF262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

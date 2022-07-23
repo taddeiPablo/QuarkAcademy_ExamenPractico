@@ -7,9 +7,9 @@ namespace Cotizador_Entity_Library.Entities
 {
     public class Pantalon: Prenda
     {
-        private TipoPantalon tpantalon;
+        private TipoPrenda tpantalon;
 
-        public TipoPantalon Tipo_Pantalon
+        public TipoPrenda Tipo_Pantalon
         {
             get => this.tpantalon;
         }
@@ -21,7 +21,7 @@ namespace Cotizador_Entity_Library.Entities
         {
             get => this.cant_unidades_stock;
         }
-        public Pantalon(TipoPantalon tpantalon, Calidad calidad, double precio_unitario, int cant_unidades_stock)
+        public Pantalon(TipoPrenda tpantalon, Calidad calidad, double precio_unitario, int cant_unidades_stock)
             :base(calidad, precio_unitario, cant_unidades_stock)
         {
             this.tpantalon = tpantalon;

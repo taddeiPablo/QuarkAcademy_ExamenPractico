@@ -13,7 +13,7 @@ namespace Cotizador_Entity_Library.Entities
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public List<Prenda> Listado_de_prendas { get => listado_de_prendas; }
+        public List<Prenda> Listado_de_prendas { get => listado_de_prendas; set => listado_de_prendas = value; }
         public List<Vendedor> Vendedores { get => vendedores; }
 
         public Tienda(string nombre, string direccion)
@@ -29,9 +29,9 @@ namespace Cotizador_Entity_Library.Entities
             this.vendedores.Add(unvendedor);
         }
 
-        public void InitStock()
+        public void buscarPrenda()
         {
-            // logica para cargar el stock
+
         }
     }
 }

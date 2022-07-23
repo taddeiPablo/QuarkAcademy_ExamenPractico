@@ -10,7 +10,7 @@ namespace Cotizador_Entity_Library.Enums
         Standard
     }
 
-    public enum TipoCuello
+    /*public enum TipoCuello
     {
         Mao,
         Comun
@@ -26,6 +26,16 @@ namespace Cotizador_Entity_Library.Enums
     {
         Chupin,
         Comun
+    }*/
+
+    public enum TipoPrenda
+    {
+        Cuello_comun,
+        Cuello_mao,
+        Manga_larga,
+        Manga_corta,
+        Comun,
+        Chupin
     }
 
 }

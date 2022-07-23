@@ -1,0 +1,11 @@
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\bin\Debug\net5.0\Cotizador_Entity_Library.deps.json
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\bin\Debug\net5.0\Cotizador_Entity_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\bin\Debug\net5.0\ref\Cotizador_Entity_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\bin\Debug\net5.0\Cotizador_Entity_Library.pdb
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.AssemblyInfoInputs.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.AssemblyInfo.cs
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.csproj.CoreCompileInputs.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\ref\Cotizador_Entity_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entity_Library\obj\Debug\net5.0\Cotizador_Entity_Library.pdb

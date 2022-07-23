@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "testDiagram/1.0.0": {
+        "dependencies": {
+          "Cotizador_Entity_Library": "1.0.0"
+        },
+        "runtime": {
+          "testDiagram.dll": {}
+        }
+      },
+      "Cotizador_Entity_Library/1.0.0": {
+        "runtime": {
+          "Cotizador_Entity_Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "testDiagram/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Cotizador_Entity_Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

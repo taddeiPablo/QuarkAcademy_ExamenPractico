@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace QuarkCotizador.Iinterfaces
 {
-    interface IView
+    public interface IView
     {
-
+        void init_Tienda(string nombreTienda, string direccion);
+        void init_Vendedor(string nombre_y_apellido_vendedor, string codVendedor);
     }
 }

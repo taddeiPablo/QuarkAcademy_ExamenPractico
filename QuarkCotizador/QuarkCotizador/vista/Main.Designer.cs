@@ -86,10 +86,10 @@ namespace QuarkCotizador
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(202, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 31);
+            this.label1.Size = new System.Drawing.Size(185, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "COTIZADOR";
             // 
@@ -100,20 +100,20 @@ namespace QuarkCotizador
             this.groupBox1.Controls.Add(this.checkBoxChupin);
             this.groupBox1.Controls.Add(this.PantalonesRadioBtn);
             this.groupBox1.Controls.Add(this.camisaRadioBtn);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(81, 213);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(440, 139);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Prenda";
+            this.groupBox1.Text = "Prendas";
             // 
             // checkBoxCuelloMao
             // 
             this.checkBoxCuelloMao.AutoSize = true;
             this.checkBoxCuelloMao.Location = new System.Drawing.Point(330, 51);
             this.checkBoxCuelloMao.Name = "checkBoxCuelloMao";
-            this.checkBoxCuelloMao.Size = new System.Drawing.Size(95, 20);
+            this.checkBoxCuelloMao.Size = new System.Drawing.Size(89, 17);
             this.checkBoxCuelloMao.TabIndex = 6;
             this.checkBoxCuelloMao.Text = "Cuello Mao";
             this.checkBoxCuelloMao.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@ namespace QuarkCotizador
             this.checkBoxMangaCorta.AutoSize = true;
             this.checkBoxMangaCorta.Location = new System.Drawing.Point(220, 51);
             this.checkBoxMangaCorta.Name = "checkBoxMangaCorta";
-            this.checkBoxMangaCorta.Size = new System.Drawing.Size(104, 20);
+            this.checkBoxMangaCorta.Size = new System.Drawing.Size(98, 17);
             this.checkBoxMangaCorta.TabIndex = 5;
             this.checkBoxMangaCorta.Text = "Manga Corta";
             this.checkBoxMangaCorta.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@ namespace QuarkCotizador
             this.checkBoxChupin.AutoSize = true;
             this.checkBoxChupin.Location = new System.Drawing.Point(220, 100);
             this.checkBoxChupin.Name = "checkBoxChupin";
-            this.checkBoxChupin.Size = new System.Drawing.Size(68, 20);
+            this.checkBoxChupin.Size = new System.Drawing.Size(65, 17);
             this.checkBoxChupin.TabIndex = 4;
             this.checkBoxChupin.Text = "Chupin";
             this.checkBoxChupin.UseVisualStyleBackColor = true;
@@ -153,6 +153,7 @@ namespace QuarkCotizador
             // camisaRadioBtn
             // 
             this.camisaRadioBtn.AutoSize = true;
+            this.camisaRadioBtn.Checked = true;
             this.camisaRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.camisaRadioBtn.Location = new System.Drawing.Point(42, 45);
             this.camisaRadioBtn.Name = "camisaRadioBtn";
@@ -166,7 +167,7 @@ namespace QuarkCotizador
             // 
             this.groupBox2.Controls.Add(this.LabelUnidadStock);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(81, 358);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(440, 50);
@@ -178,16 +179,16 @@ namespace QuarkCotizador
             this.LabelUnidadStock.AutoSize = true;
             this.LabelUnidadStock.Location = new System.Drawing.Point(342, 17);
             this.LabelUnidadStock.Name = "LabelUnidadStock";
-            this.LabelUnidadStock.Size = new System.Drawing.Size(45, 16);
+            this.LabelUnidadStock.Size = new System.Drawing.Size(35, 13);
             this.LabelUnidadStock.TabIndex = 1;
-            this.LabelUnidadStock.Text = "label8";
+            this.LabelUnidadStock.Text = "0000";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 17);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(204, 16);
+            this.label7.Size = new System.Drawing.Size(192, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Unidades de Stock Disponibles :";
             // 
@@ -195,10 +196,10 @@ namespace QuarkCotizador
             // 
             this.groupBox3.Controls.Add(this.radioBtnPremium);
             this.groupBox3.Controls.Add(this.radioBtnStandard);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(81, 415);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 90);
+            this.groupBox3.Size = new System.Drawing.Size(200, 83);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Calidad de Prenda";
@@ -206,9 +207,9 @@ namespace QuarkCotizador
             // radioBtnPremium
             // 
             this.radioBtnPremium.AutoSize = true;
-            this.radioBtnPremium.Location = new System.Drawing.Point(42, 59);
+            this.radioBtnPremium.Location = new System.Drawing.Point(64, 60);
             this.radioBtnPremium.Name = "radioBtnPremium";
-            this.radioBtnPremium.Size = new System.Drawing.Size(79, 20);
+            this.radioBtnPremium.Size = new System.Drawing.Size(72, 17);
             this.radioBtnPremium.TabIndex = 1;
             this.radioBtnPremium.TabStop = true;
             this.radioBtnPremium.Text = "Premium";
@@ -217,9 +218,10 @@ namespace QuarkCotizador
             // radioBtnStandard
             // 
             this.radioBtnStandard.AutoSize = true;
-            this.radioBtnStandard.Location = new System.Drawing.Point(42, 33);
+            this.radioBtnStandard.Checked = true;
+            this.radioBtnStandard.Location = new System.Drawing.Point(64, 36);
             this.radioBtnStandard.Name = "radioBtnStandard";
-            this.radioBtnStandard.Size = new System.Drawing.Size(81, 20);
+            this.radioBtnStandard.Size = new System.Drawing.Size(76, 17);
             this.radioBtnStandard.TabIndex = 0;
             this.radioBtnStandard.TabStop = true;
             this.radioBtnStandard.Text = "Standard";
@@ -231,7 +233,7 @@ namespace QuarkCotizador
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.labelPrecioUnitario);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(327, 415);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(194, 83);
@@ -243,33 +245,33 @@ namespace QuarkCotizador
             // 
             this.txtCantidad.Location = new System.Drawing.Point(143, 37);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(45, 21);
+            this.txtCantidad.Size = new System.Drawing.Size(45, 20);
             this.txtCantidad.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(73, 38);
+            this.label11.Location = new System.Drawing.Point(74, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 16);
+            this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 2;
             this.label11.Text = "Cantidad :";
             // 
             // labelPrecioUnitario
             // 
             this.labelPrecioUnitario.AutoSize = true;
-            this.labelPrecioUnitario.Location = new System.Drawing.Point(20, 38);
+            this.labelPrecioUnitario.Location = new System.Drawing.Point(22, 40);
             this.labelPrecioUnitario.Name = "labelPrecioUnitario";
-            this.labelPrecioUnitario.Size = new System.Drawing.Size(52, 16);
+            this.labelPrecioUnitario.Size = new System.Drawing.Size(14, 13);
             this.labelPrecioUnitario.TabIndex = 1;
-            this.labelPrecioUnitario.Text = "label10";
+            this.labelPrecioUnitario.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 37);
+            this.label9.Location = new System.Drawing.Point(2, 40);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 16);
+            this.label9.Size = new System.Drawing.Size(14, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "$";
             // 
@@ -288,31 +290,35 @@ namespace QuarkCotizador
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(348, 33);
+            this.labelTotal.ForeColor = System.Drawing.Color.Blue;
+            this.labelTotal.Location = new System.Drawing.Point(464, 33);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(68, 22);
+            this.labelTotal.Size = new System.Drawing.Size(50, 22);
             this.labelTotal.TabIndex = 2;
-            this.labelTotal.Text = "label13";
+            this.labelTotal.Text = "0000";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(322, 33);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Blue;
+            this.label12.Location = new System.Drawing.Point(399, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 22);
+            this.label12.Size = new System.Drawing.Size(21, 22);
             this.label12.TabIndex = 1;
             this.label12.Text = "$";
             // 
             // btnCotizar
             // 
-            this.btnCotizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCotizar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCotizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCotizar.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnCotizar.Location = new System.Drawing.Point(80, 19);
             this.btnCotizar.Name = "btnCotizar";
             this.btnCotizar.Size = new System.Drawing.Size(200, 53);
             this.btnCotizar.TabIndex = 0;
             this.btnCotizar.Text = "COTIZAR";
-            this.btnCotizar.UseVisualStyleBackColor = true;
+            this.btnCotizar.UseVisualStyleBackColor = false;
             // 
             // groupBox5
             // 
@@ -320,7 +326,7 @@ namespace QuarkCotizador
             this.groupBox5.Controls.Add(this.Cod_vendedor);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.nombre_y_apellido);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(12, 150);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(586, 57);
@@ -333,7 +339,7 @@ namespace QuarkCotizador
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(446, 26);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(120, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(111, 13);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Historial Vendedor";
@@ -341,27 +347,27 @@ namespace QuarkCotizador
             // Cod_vendedor
             // 
             this.Cod_vendedor.AutoSize = true;
-            this.Cod_vendedor.Location = new System.Drawing.Point(162, 26);
+            this.Cod_vendedor.Location = new System.Drawing.Point(146, 26);
             this.Cod_vendedor.Name = "Cod_vendedor";
-            this.Cod_vendedor.Size = new System.Drawing.Size(98, 16);
+            this.Cod_vendedor.Size = new System.Drawing.Size(89, 13);
             this.Cod_vendedor.TabIndex = 3;
             this.Cod_vendedor.Text = "Cod_vendedor";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(131, 26);
+            this.label4.Location = new System.Drawing.Point(130, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 16);
+            this.label4.Size = new System.Drawing.Size(10, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "|";
             // 
             // nombre_y_apellido
             // 
             this.nombre_y_apellido.AutoSize = true;
-            this.nombre_y_apellido.Location = new System.Drawing.Point(6, 26);
+            this.nombre_y_apellido.Location = new System.Drawing.Point(16, 26);
             this.nombre_y_apellido.Name = "nombre_y_apellido";
-            this.nombre_y_apellido.Size = new System.Drawing.Size(119, 16);
+            this.nombre_y_apellido.Size = new System.Drawing.Size(108, 13);
             this.nombre_y_apellido.TabIndex = 0;
             this.nombre_y_apellido.Text = "Nombre y apellido";
             // 
@@ -379,18 +385,20 @@ namespace QuarkCotizador
             // DireccionTienda
             // 
             this.DireccionTienda.AutoSize = true;
-            this.DireccionTienda.Location = new System.Drawing.Point(422, 16);
+            this.DireccionTienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionTienda.Location = new System.Drawing.Point(373, 17);
             this.DireccionTienda.Name = "DireccionTienda";
-            this.DireccionTienda.Size = new System.Drawing.Size(144, 16);
+            this.DireccionTienda.Size = new System.Drawing.Size(166, 16);
             this.DireccionTienda.TabIndex = 1;
             this.DireccionTienda.Text = "Direccion de la Tienda";
             // 
             // nombre_tienda
             // 
             this.nombre_tienda.AutoSize = true;
-            this.nombre_tienda.Location = new System.Drawing.Point(6, 16);
+            this.nombre_tienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_tienda.Location = new System.Drawing.Point(5, 11);
             this.nombre_tienda.Name = "nombre_tienda";
-            this.nombre_tienda.Size = new System.Drawing.Size(127, 16);
+            this.nombre_tienda.Size = new System.Drawing.Size(187, 22);
             this.nombre_tienda.TabIndex = 0;
             this.nombre_tienda.Text = "nombre de la tienda";
             // 
@@ -422,6 +430,7 @@ namespace QuarkCotizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(610, 602);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -435,6 +444,7 @@ namespace QuarkCotizador
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "QuarkCotizador";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -7,14 +7,14 @@ namespace Cotizador_Entity_Library.Entities
 {
     public class Camisa: Prenda
     {
-        private TipoCuello tcuello;
-        private TipoManga tmanga;
+        private TipoPrenda tcuello;
+        private TipoPrenda tmanga;
 
-        public TipoCuello Tipo_Cuello
+        public TipoPrenda Tipo_Cuello
         {
             get => this.tcuello;
         }
-        public TipoManga Tipo_manga
+        public TipoPrenda Tipo_manga
         {
             get => this.tmanga;
         }
@@ -27,7 +27,7 @@ namespace Cotizador_Entity_Library.Entities
             get => this.cant_unidades_stock;
         }
 
-        public Camisa(TipoCuello tcuello, TipoManga tmanga, double precio_unitario, int cant_unidades_stock, Calidad calidad)
+        public Camisa(TipoPrenda tcuello, TipoPrenda tmanga, double precio_unitario, int cant_unidades_stock, Calidad calidad)
             :base(calidad, precio_unitario, cant_unidades_stock)
         {
             this.tcuello = tcuello;
