@@ -62,6 +62,7 @@ namespace QuarkCotizador
             this.nombre_tienda = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -117,6 +118,7 @@ namespace QuarkCotizador
             this.checkBoxCuelloMao.TabIndex = 6;
             this.checkBoxCuelloMao.Text = "Cuello Mao";
             this.checkBoxCuelloMao.UseVisualStyleBackColor = true;
+            this.checkBoxCuelloMao.CheckedChanged += new System.EventHandler(this.checkBoxCuelloMao_CheckedChanged);
             // 
             // checkBoxMangaCorta
             // 
@@ -127,6 +129,7 @@ namespace QuarkCotizador
             this.checkBoxMangaCorta.TabIndex = 5;
             this.checkBoxMangaCorta.Text = "Manga Corta";
             this.checkBoxMangaCorta.UseVisualStyleBackColor = true;
+            this.checkBoxMangaCorta.CheckedChanged += new System.EventHandler(this.checkBoxMangaCorta_CheckedChanged);
             // 
             // checkBoxChupin
             // 
@@ -137,6 +140,7 @@ namespace QuarkCotizador
             this.checkBoxChupin.TabIndex = 4;
             this.checkBoxChupin.Text = "Chupin";
             this.checkBoxChupin.UseVisualStyleBackColor = true;
+            this.checkBoxChupin.CheckedChanged += new System.EventHandler(this.checkBoxChupin_CheckedChanged);
             // 
             // PantalonesRadioBtn
             // 
@@ -149,6 +153,7 @@ namespace QuarkCotizador
             this.PantalonesRadioBtn.TabStop = true;
             this.PantalonesRadioBtn.Text = "Pantalones";
             this.PantalonesRadioBtn.UseVisualStyleBackColor = true;
+            this.PantalonesRadioBtn.CheckedChanged += new System.EventHandler(this.PantalonesRadioBtn_CheckedChanged);
             // 
             // camisaRadioBtn
             // 
@@ -162,6 +167,7 @@ namespace QuarkCotizador
             this.camisaRadioBtn.TabStop = true;
             this.camisaRadioBtn.Text = "Camisa";
             this.camisaRadioBtn.UseVisualStyleBackColor = true;
+            this.camisaRadioBtn.CheckedChanged += new System.EventHandler(this.camisaRadioBtn_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -214,6 +220,7 @@ namespace QuarkCotizador
             this.radioBtnPremium.TabStop = true;
             this.radioBtnPremium.Text = "Premium";
             this.radioBtnPremium.UseVisualStyleBackColor = true;
+            this.radioBtnPremium.CheckedChanged += new System.EventHandler(this.radioBtnPremium_CheckedChanged);
             // 
             // radioBtnStandard
             // 
@@ -226,6 +233,7 @@ namespace QuarkCotizador
             this.radioBtnStandard.TabStop = true;
             this.radioBtnStandard.Text = "Standard";
             this.radioBtnStandard.UseVisualStyleBackColor = true;
+            this.radioBtnStandard.CheckedChanged += new System.EventHandler(this.radioBtnStandard_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -385,10 +393,10 @@ namespace QuarkCotizador
             // DireccionTienda
             // 
             this.DireccionTienda.AutoSize = true;
-            this.DireccionTienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionTienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DireccionTienda.Location = new System.Drawing.Point(373, 17);
             this.DireccionTienda.Name = "DireccionTienda";
-            this.DireccionTienda.Size = new System.Drawing.Size(166, 16);
+            this.DireccionTienda.Size = new System.Drawing.Size(152, 15);
             this.DireccionTienda.TabIndex = 1;
             this.DireccionTienda.Text = "Direccion de la Tienda";
             // 
@@ -415,16 +423,24 @@ namespace QuarkCotizador
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recargarToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // recargarToolStripMenuItem
+            // 
+            this.recargarToolStripMenuItem.Name = "recargarToolStripMenuItem";
+            this.recargarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.recargarToolStripMenuItem.Text = "recargar";
+            this.recargarToolStripMenuItem.Click += new System.EventHandler(this.recargarToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "salir";
             // 
             // Main
             // 
@@ -503,6 +519,7 @@ namespace QuarkCotizador
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recargarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

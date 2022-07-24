@@ -8,10 +8,17 @@ using Cotizador_Entities_Library.Enums;
 
 namespace QuarkCotizador.modelo
 {
+    public enum TipoFiltro
+    {
+        Camisa = 1,
+        Pantalon = 2
+    }
     public class CotizadorModel
     {
         private Vendedor _vendedor;
         private Tienda _tienda;
+        private Camisa Camisa = null;
+        private Pantalon Pantalon = null;
 
         public String cod_vendedor()
         {
@@ -29,7 +36,6 @@ namespace QuarkCotizador.modelo
         {
             return _tienda.Direccion;
         }
-
         public void Cotizador()
         {
 
@@ -61,6 +67,54 @@ namespace QuarkCotizador.modelo
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Standard, 950, 250));
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Premium, 1100, 250));
             return listado_prendas;
+        }
+
+        public (string, string) filtroCamisas(int tipoManga, int tipoCuello, int calidad)
+        {
+            foreach (Prenda item in _tienda.Listado_de_prendas)
+            {
+                if (item is Camisa)
+                {
+                    Camisa camisa = (Camisa)item;
+                    if (camisa.Tipo_manga == (TipoPrenda)tipoManga && camisa.Tipo_Cuello == (TipoPrenda)tipoCuello && camisa.Tipo_Calidad == (Calidad)calidad)
+                    {
+                        Camisa = camisa;
+                        break;
+                    }
+                }
+            }
+            if (Camisa != null)
+            {
+                return (Convert.ToString(Camisa.Cant_Unidades_Stock), Convert.ToString(Camisa.Precio_Unitario));
+            }
+            else
+            {
+                return ("0", "0000");
+            }
+        }
+
+        public (string, string) filtroPantalones(int tipoPantalon, int calidad)
+        {
+            foreach (Prenda item in _tienda.Listado_de_prendas)
+            {
+                if (item is Pantalon)
+                {
+                    Pantalon pantalon = (Pantalon)item;
+                    if (pantalon.Tipo_Pantalon == (TipoPrenda)tipoPantalon && pantalon.Tipo_Calidad == (Calidad)calidad)
+                    {
+                        Pantalon = pantalon;
+                        break;
+                    }
+                }
+            }
+            if (Pantalon != null)
+            {
+                return (Convert.ToString(Pantalon.Cant_Unidades_Stock), Convert.ToString(Pantalon.Precio_Unitario));
+            }
+            else
+            {
+                return ("0", "0000");
+            }            
         }
     }
 }

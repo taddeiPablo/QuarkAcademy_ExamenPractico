@@ -31,12 +31,101 @@ namespace QuarkCotizador
             nombre_y_apellido.Text = nombre_y_apellido_vendedor;
             Cod_vendedor.Text = codVendedor;
         }
-
+        public void valores_filtros(string unidadStock, string precioUnitario)
+        {
+            LabelUnidadStock.Text = unidadStock;
+            labelPrecioUnitario.Text = precioUnitario;
+        }
         private void Main_Load(object sender, EventArgs e)
         {
             presenter = new CotizadorPresenter(this);
             presenter.init();
-            //checkBoxMangaCorta.Enabled = false;
+            filtrar_prendas_check();
+        }
+
+        private void filtrar_prendas_check()
+        {
+            checkBoxMangaCorta.Enabled = camisaRadioBtn.Checked == true ? camisaRadioBtn.Checked : false;
+            checkBoxCuelloMao.Enabled = camisaRadioBtn.Checked == true ? camisaRadioBtn.Checked : false;
+            checkBoxChupin.Enabled = PantalonesRadioBtn.Checked == true ? PantalonesRadioBtn.Checked : false;
+            if (camisaRadioBtn.Checked)
+            {
+                presenter.TipoFiltro = 1;
+            }else if (PantalonesRadioBtn.Checked)
+            {
+                presenter.TipoFiltro = 2;
+            }
+            presenter.filtrar_prendas();
+        }
+
+        private void camisaRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioCamisa = (RadioButton)sender;
+            checkBoxMangaCorta.Enabled = radioCamisa.Checked;
+            checkBoxCuelloMao.Enabled = radioCamisa.Checked;
+            if (radioCamisa.Checked)
+            {
+                presenter.TipoFiltro = 1;
+                presenter.filtrar_prendas();
+            }
+        }
+
+        private void PantalonesRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioPantalon = (RadioButton)sender;
+            checkBoxChupin.Enabled = radioPantalon.Checked;
+            if (radioPantalon.Checked)
+            {
+                presenter.TipoFiltro = 2;
+                presenter.filtrar_prendas();
+            }
+        }
+
+        private void checkBoxMangaCorta_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkManga = (CheckBox)sender;
+            presenter.CamisaTipoManga = checkManga.Checked ? 4 : 3;
+            presenter.filtrar_prendas();
+        }
+
+        private void checkBoxCuelloMao_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkCuello = (CheckBox)sender;
+            presenter.CamisaTipoCuello = checkCuello.Checked ? 2 : 1;
+            presenter.filtrar_prendas();
+        }
+
+        private void checkBoxChupin_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkChupin = (CheckBox)sender;
+            presenter.PantalonTipo = checkBoxChupin.Checked ? 6 : 5;
+            presenter.filtrar_prendas();
+        }
+
+        private void radioBtnStandard_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioStandard = (RadioButton)sender;
+            if (radioStandard.Checked)
+            {
+                presenter.CalidadPrenda = 2;
+            }
+            presenter.filtrar_prendas();
+        }
+
+        private void radioBtnPremium_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioPremium = (RadioButton)sender;
+            if (radioPremium.Checked)
+            {
+                presenter.CalidadPrenda = 1;
+            }
+            presenter.filtrar_prendas();
+        }
+
+        private void recargarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            presenter.limpiar_filtro();
+            presenter.filtrar_prendas();
         }
     }
 }

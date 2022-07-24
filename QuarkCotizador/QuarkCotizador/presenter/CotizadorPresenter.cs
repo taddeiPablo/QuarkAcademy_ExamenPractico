@@ -12,6 +12,38 @@ namespace QuarkCotizador.presenter
     {
         private IView viewMain;
         private CotizadorModel model;
+        
+        private int camisaTipoCuello = 1;
+        private int camisaTipoManga = 3;
+        private int calidadPrenda = 2;
+        private int pantalonTipo = 5;
+        private int tipoFiltro = 1;
+
+        public int CamisaTipoCuello
+        {
+            get => this.camisaTipoCuello;
+            set => this.camisaTipoCuello = value;
+        }
+        public int CamisaTipoManga
+        {
+            get => this.camisaTipoManga;
+            set => this.camisaTipoManga = value;
+        }
+        public int CalidadPrenda
+        {
+            get => this.calidadPrenda;
+            set => this.calidadPrenda = value;
+        }
+        public int PantalonTipo
+        {
+            get => this.pantalonTipo;
+            set => this.pantalonTipo = value;
+        }
+        public int TipoFiltro
+        {
+            get => this.tipoFiltro;
+            set => this.tipoFiltro = value;
+        }
 
         public CotizadorPresenter(IView viewmain)
         {
@@ -23,6 +55,33 @@ namespace QuarkCotizador.presenter
         {
             viewMain.init_Tienda(this.model.nombre_tienda(), this.model.direccion_tienda());
             viewMain.init_Vendedor(this.model.nombre_apellido_Vendedor(), this.model.cod_vendedor());
+        }
+
+        public void limpiar_filtro()
+        {
+            this.camisaTipoCuello = 1;
+            this.camisaTipoManga = 3;
+            this.calidadPrenda = 2;
+            this.pantalonTipo = 5;
+            this.tipoFiltro = 1;
+        }
+
+        public void filtrar_prendas()
+        {
+            TipoFiltro Tipo_filtro = (TipoFiltro)this.tipoFiltro;
+            switch (Tipo_filtro)
+            {
+                case modelo.TipoFiltro.Camisa:
+                    (string Camisa_Cant_Unidades_Stock, string Camisa_Precio_Unitario) = this.model.filtroCamisas(this.camisaTipoManga, this.camisaTipoCuello, this.calidadPrenda);
+                    this.viewMain.valores_filtros(Camisa_Cant_Unidades_Stock, Camisa_Precio_Unitario);
+                    break;
+                case modelo.TipoFiltro.Pantalon:
+                    (string pantalon_Cant_Unidades_Stock1, string pantalon_Precio_Unitario1) = this.model.filtroPantalones(this.pantalonTipo, this.calidadPrenda);
+                    this.viewMain.valores_filtros(pantalon_Cant_Unidades_Stock1, pantalon_Precio_Unitario1);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

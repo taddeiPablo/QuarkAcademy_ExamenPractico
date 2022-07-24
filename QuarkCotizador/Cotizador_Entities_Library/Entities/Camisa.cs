@@ -26,6 +26,10 @@ namespace Cotizador_Entities_Library.Entities
         {
             get => this.cant_unidades_stock;
         }
+        public Calidad Tipo_Calidad
+        {
+            get => this.calidad;
+        }
 
         public Camisa(TipoPrenda tcuello, TipoPrenda tmanga, double precio_unitario, int cant_unidades_stock, Calidad calidad)
             :base(calidad, precio_unitario, cant_unidades_stock)
