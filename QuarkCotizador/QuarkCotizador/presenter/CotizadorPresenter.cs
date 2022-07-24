@@ -13,11 +13,11 @@ namespace QuarkCotizador.presenter
         private IView viewMain;
         private CotizadorModel model;
         
-        private int camisaTipoCuello = 1;
-        private int camisaTipoManga = 3;
-        private int calidadPrenda = 2;
-        private int pantalonTipo = 5;
-        private int tipoFiltro = 1;
+        private int camisaTipoCuello = 1;// tipos de cuellos
+        private int camisaTipoManga = 3;// tipos de mangas
+        private int calidadPrenda = 2; // calidad de las prendas
+        private int pantalonTipo = 5; //tipo pantalon
+        private int tipoFiltro = 1; // filtro seleccionado o camisas o pantalones
 
         public int CamisaTipoCuello
         {
@@ -48,7 +48,7 @@ namespace QuarkCotizador.presenter
         public CotizadorPresenter(IView viewmain)
         {
             this.viewMain = viewmain;
-            this.model = new CotizadorModel();
+            this.model = CotizadorModel.sharedInstance();//new CotizadorModel();
         }
 
         public void init()
@@ -82,6 +82,11 @@ namespace QuarkCotizador.presenter
                 default:
                     break;
             }
+        }
+        
+        public void cotizar(int cantidadPrendas)
+        {
+            this.viewMain.mostrarCotizacionFinal(this.model.Cotizador(cantidadPrendas, this.tipoFiltro));
         }
     }
 }

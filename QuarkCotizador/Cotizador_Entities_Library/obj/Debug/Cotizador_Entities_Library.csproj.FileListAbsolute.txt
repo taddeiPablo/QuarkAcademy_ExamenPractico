@@ -3,4 +3,3 @@ C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotiz
 C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Debug\Cotizador_Entities_Library.csproj.CoreCompileInputs.cache
 C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Debug\Cotizador_Entities_Library.dll
 C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Debug\Cotizador_Entities_Library.pdb
-C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Debug\Cotizador_Entities_Library.csproj.AssemblyReference.cache

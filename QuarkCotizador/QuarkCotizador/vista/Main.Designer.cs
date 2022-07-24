@@ -185,9 +185,8 @@ namespace QuarkCotizador
             this.LabelUnidadStock.AutoSize = true;
             this.LabelUnidadStock.Location = new System.Drawing.Point(342, 17);
             this.LabelUnidadStock.Name = "LabelUnidadStock";
-            this.LabelUnidadStock.Size = new System.Drawing.Size(35, 13);
+            this.LabelUnidadStock.Size = new System.Drawing.Size(0, 13);
             this.LabelUnidadStock.TabIndex = 1;
-            this.LabelUnidadStock.Text = "0000";
             // 
             // label7
             // 
@@ -255,6 +254,7 @@ namespace QuarkCotizador
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(45, 20);
             this.txtCantidad.TabIndex = 3;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // label11
             // 
@@ -301,9 +301,8 @@ namespace QuarkCotizador
             this.labelTotal.ForeColor = System.Drawing.Color.Blue;
             this.labelTotal.Location = new System.Drawing.Point(464, 33);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(50, 22);
+            this.labelTotal.Size = new System.Drawing.Size(0, 22);
             this.labelTotal.TabIndex = 2;
-            this.labelTotal.Text = "0000";
             // 
             // label12
             // 
@@ -327,6 +326,7 @@ namespace QuarkCotizador
             this.btnCotizar.TabIndex = 0;
             this.btnCotizar.Text = "COTIZAR";
             this.btnCotizar.UseVisualStyleBackColor = false;
+            this.btnCotizar.Click += new System.EventHandler(this.btnCotizar_Click);
             // 
             // groupBox5
             // 
@@ -351,6 +351,7 @@ namespace QuarkCotizador
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Historial Vendedor";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Cod_vendedor
             // 
@@ -432,15 +433,16 @@ namespace QuarkCotizador
             // recargarToolStripMenuItem
             // 
             this.recargarToolStripMenuItem.Name = "recargarToolStripMenuItem";
-            this.recargarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.recargarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.recargarToolStripMenuItem.Text = "recargar";
             this.recargarToolStripMenuItem.Click += new System.EventHandler(this.recargarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.salirToolStripMenuItem.Text = "salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // Main
             // 

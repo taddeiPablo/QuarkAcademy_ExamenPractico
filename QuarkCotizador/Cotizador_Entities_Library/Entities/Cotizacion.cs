@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Cotizador_Entities_Library.Entities
@@ -13,11 +14,17 @@ namespace Cotizador_Entities_Library.Entities
         private int cant_de_unidades_cotizadas;
         private double result_calc_cotizadas;
 
+        [DisplayName("NumIdentificacion")]
         public int NumIdentificacion { get => numIdentificacion; }
+        [DisplayName("Fecha y Hora")]
         public DateTime Fecha_y_Hora { get => fecha_y_hora; }
+        [DisplayName("Cod Vendedor")]
         public int Cod_Vendedor { get => cod_vendedor; }
+        [DisplayName("Prenda Cotizada")]
         public Prenda Prenda_Cotizada { get => prenda_cotizada; }
+        [DisplayName("Cantidad de Unidades Cotizadas")]
         public int Cant_de_Unidades_Cotizadas { get => cant_de_unidades_cotizadas; set => cant_de_unidades_cotizadas = value; }
+        [DisplayName("Cotizacion Final")]
         public double Result_Calc_Cotizadas { get => result_calc_cotizadas; set => result_calc_cotizadas = value; }
 
         public Cotizacion(int numIdentificacion, DateTime fecha_y_hora, int cod_vendedor, Prenda prenda_cotizada, int cant_de_unidades_cotizadas, double result_calc_cotizadas)

@@ -8,6 +8,26 @@ namespace QuarkCotizador.modelo.utils
 {
     public static class CreacionIds
     {
+        private static int id_Cotizacion_ultimo = 0;
+        public static int codVendedor()
+        {
+            Random random = new Random();
+            int codVendedor = random.Next(100, 10000);
+            return codVendedor;
+        }
 
+        public static int idCotizacion()
+        {
+            Random random = new Random();
+            int id_Cotizacion = 0;
+            do
+            {
+                id_Cotizacion = random.Next(10, 1000000);
+
+            } while (id_Cotizacion == id_Cotizacion_ultimo);
+            id_Cotizacion_ultimo = id_Cotizacion;
+
+            return id_Cotizacion;
+        }
     }
 }

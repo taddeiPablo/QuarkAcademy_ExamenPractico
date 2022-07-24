@@ -30,15 +30,15 @@ namespace QuarkCotizador
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridCotizaciones = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCotizaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dataGridCotizaciones);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 2);
             this.groupBox1.Name = "groupBox1";
@@ -47,13 +47,13 @@ namespace QuarkCotizador
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Historial del Vendedor";
             // 
-            // dataGridView1
+            // dataGridCotizaciones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(534, 293);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridCotizaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCotizaciones.Location = new System.Drawing.Point(6, 19);
+            this.dataGridCotizaciones.Name = "dataGridCotizaciones";
+            this.dataGridCotizaciones.Size = new System.Drawing.Size(534, 293);
+            this.dataGridCotizaciones.TabIndex = 0;
             // 
             // Historial_Vendedores
             // 
@@ -63,8 +63,9 @@ namespace QuarkCotizador
             this.Controls.Add(this.groupBox1);
             this.Name = "Historial_Vendedores";
             this.Text = "Historial_Vendedores";
+            this.Load += new System.EventHandler(this.Historial_Vendedores_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCotizaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,6 +73,6 @@ namespace QuarkCotizador
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridCotizaciones;
     }
 }
