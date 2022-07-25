@@ -73,11 +73,11 @@ namespace QuarkCotizador.presenter
             switch (Tipo_filtro)
             {
                 case modelo.TipoFiltro.Camisa:
-                    (string Camisa_Cant_Unidades_Stock, string Camisa_Precio_Unitario) = this.model.filtroCamisas(this.camisaTipoManga, this.camisaTipoCuello, this.calidadPrenda);
+                    (int Camisa_Cant_Unidades_Stock, double Camisa_Precio_Unitario) = this.model.filtroCamisas(this.camisaTipoManga, this.camisaTipoCuello, this.calidadPrenda);
                     this.viewMain.valores_filtros(Camisa_Cant_Unidades_Stock, Camisa_Precio_Unitario);
                     break;
                 case modelo.TipoFiltro.Pantalon:
-                    (string pantalon_Cant_Unidades_Stock1, string pantalon_Precio_Unitario1) = this.model.filtroPantalones(this.pantalonTipo, this.calidadPrenda);
+                    (int  pantalon_Cant_Unidades_Stock1, double pantalon_Precio_Unitario1) = this.model.filtroPantalones(this.pantalonTipo, this.calidadPrenda);
                     this.viewMain.valores_filtros(pantalon_Cant_Unidades_Stock1, pantalon_Precio_Unitario1);
                     break;
                 default:
@@ -86,7 +86,14 @@ namespace QuarkCotizador.presenter
         }
         public void cotizar(int cantidadPrendas)
         {
-            this.viewMain.mostrarCotizacionFinal(this.model.Cotizador(cantidadPrendas, this.tipoFiltro));
+            try
+            {
+                this.viewMain.mostrarCotizacionFinal(this.model.Cotizador(cantidadPrendas, this.tipoFiltro));
+            }
+            catch (Exception ex)
+            {
+                this.viewMain.excepcion_stock(ex.Message);
+            }
         }
         #endregion
     }

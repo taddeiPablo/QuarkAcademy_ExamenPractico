@@ -20,6 +20,7 @@ namespace QuarkCotizador.modelo
         private Tienda _tienda;
         private Camisa _Camisa = null;
         private Pantalon _Pantalon = null;
+        private string mensaje_de_error = "La cantidad ingresada supera las unidades en Stock ";
 
         #region Implementacion de un singleton
         private static CotizadorModel cotizadormodel = null;
@@ -65,6 +66,9 @@ namespace QuarkCotizador.modelo
             Cotizacion nuevaCotizacion = null;
             if (tipoFiltro == 1)
             {
+                if (cantidadPrendas > _Camisa.Cant_Unidades_Stock)
+                    throw new Exception(mensaje_de_error);
+
                 totalParcial = _Camisa.Precio_Unitario * cantidadPrendas;
                 if (_Camisa.Tipo_Cuello == TipoPrenda.Cuello_mao && _Camisa.Tipo_manga == TipoPrenda.Manga_corta)
                 {
@@ -92,6 +96,9 @@ namespace QuarkCotizador.modelo
             }
             else if (tipoFiltro == 2)
             {
+                if (cantidadPrendas > _Pantalon.Cant_Unidades_Stock)
+                    throw new Exception(mensaje_de_error);
+
                 totalParcial = _Pantalon.Precio_Unitario * cantidadPrendas;
                 if (_Pantalon.Tipo_Calidad == Calidad.Premium)
                 {
@@ -168,7 +175,7 @@ namespace QuarkCotizador.modelo
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Premium, 1100, 250));
             return listado_prendas;
         }
-        public (string, string) filtroCamisas(int tipoManga, int tipoCuello, int calidad)
+        public (int, double) filtroCamisas(int tipoManga, int tipoCuello, int calidad)
         {
             _Camisa = null;
             foreach (Prenda item in _tienda.Listado_de_prendas)
@@ -185,14 +192,14 @@ namespace QuarkCotizador.modelo
             }
             if (_Camisa != null)
             {
-                return (Convert.ToString(_Camisa.Cant_Unidades_Stock), Convert.ToString(_Camisa.Precio_Unitario));
+                return (_Camisa.Cant_Unidades_Stock, _Camisa.Precio_Unitario);
             }
             else
             {
-                return ("", "");
+                return (0, 0.0);
             }
         }
-        public (string, string) filtroPantalones(int tipoPantalon, int calidad)
+        public (int, double) filtroPantalones(int tipoPantalon, int calidad)
         {
             _Pantalon = null;
             foreach (Prenda item in _tienda.Listado_de_prendas)
@@ -209,11 +216,11 @@ namespace QuarkCotizador.modelo
             }
             if (_Pantalon != null)
             {
-                return (Convert.ToString(_Pantalon.Cant_Unidades_Stock), Convert.ToString(_Pantalon.Precio_Unitario));
+                return (_Pantalon.Cant_Unidades_Stock, _Pantalon.Precio_Unitario);
             }
             else
             {
-                return ("", "");
+                return (0, 0.0);
             }
         }
         #endregion

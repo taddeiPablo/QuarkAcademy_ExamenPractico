@@ -32,12 +32,12 @@ namespace QuarkCotizador
             nombre_y_apellido.Text = nombre_y_apellido_vendedor;
             Cod_vendedor.Text = codVendedor;
         }
-        public void valores_filtros(string unidadStock, string precioUnitario)
+        public void valores_filtros(int unidadStock, double precioUnitario)
         {
-            if (unidadStock != string.Empty && precioUnitario != string.Empty)
+            if (unidadStock > 0 && precioUnitario > 0.0)
             {
-                LabelUnidadStock.Text = unidadStock;
-                labelPrecioUnitario.Text = precioUnitario;
+                LabelUnidadStock.Text = Convert.ToString(unidadStock);
+                labelPrecioUnitario.Text = String.Format("{0:n0}", precioUnitario);
             }
             else
             {
@@ -46,7 +46,11 @@ namespace QuarkCotizador
         }
         public void mostrarCotizacionFinal(double CotizacionFinal)
         {
-            labelTotal.Text = Convert.ToString(CotizacionFinal);
+            labelTotal.Text = String.Format("{0:n0}", CotizacionFinal);
+        }
+        public void excepcion_stock(string mensaje)
+        {
+            MessageBox.Show(mensaje, "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
 
