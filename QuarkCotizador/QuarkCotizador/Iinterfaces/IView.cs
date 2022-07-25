@@ -12,7 +12,6 @@ namespace QuarkCotizador.Iinterfaces
         void init_Vendedor(string nombre_y_apellido_vendedor, string codVendedor);
         void valores_filtros(int unidadStock, double precioUnitario);
         void excepcion_stock(string mensaje);
-
         void mostrarCotizacionFinal(double CotizacionFinal);
     }
 }

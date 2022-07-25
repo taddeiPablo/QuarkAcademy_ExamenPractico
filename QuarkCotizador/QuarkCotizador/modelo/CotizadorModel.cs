@@ -126,7 +126,7 @@ namespace QuarkCotizador.modelo
             {
                 if (item.CodVendedor == _vendedor.CodVendedor)
                 {
-                    item.Historial_Vendedor.addCotizacion(nuevaCotizacion);
+                    item.Historial_Vendedor.agregarCotizacion(nuevaCotizacion);
                 }
             }
         }
@@ -149,8 +149,8 @@ namespace QuarkCotizador.modelo
         {
             _vendedor = new Vendedor(CreacionIds.codVendedor(), "Pablo", "Taddei");
             _tienda = new Tienda("El Shaddai", "calle 880 N°: 3324 Quilmes");
-            _tienda.addVendedor(_vendedor);
-            _tienda.Listado_de_prendas = creacion_listado_de_prendas();
+            _tienda.agregar_Vendedor(_vendedor);
+            _tienda.agregar_Listado_de_Prendas(creacion_listado_de_prendas());
         }
 
         #region Creacion del stock + filtros

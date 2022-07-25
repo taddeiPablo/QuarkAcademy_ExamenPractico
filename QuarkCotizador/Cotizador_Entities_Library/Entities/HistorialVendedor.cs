@@ -18,7 +18,7 @@ namespace Cotizador_Entities_Library.Entities
             this.historial_cotizaciones = new List<Cotizacion>();
         }
 
-        public void addCotizacion(Cotizacion cotizacion)
+        public void agregarCotizacion(Cotizacion cotizacion)
         {
             this.historial_cotizaciones.Add(cotizacion);
         }

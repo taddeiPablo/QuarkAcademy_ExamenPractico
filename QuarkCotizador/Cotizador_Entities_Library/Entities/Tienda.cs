@@ -13,7 +13,7 @@ namespace Cotizador_Entities_Library.Entities
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public List<Prenda> Listado_de_prendas { get => listado_de_prendas; set => listado_de_prendas = value; }
+        public List<Prenda> Listado_de_prendas { get => listado_de_prendas; }
         public List<Vendedor> Vendedores { get => vendedores; }
 
         public Tienda(string nombre, string direccion)
@@ -24,9 +24,14 @@ namespace Cotizador_Entities_Library.Entities
             this.vendedores = new List<Vendedor>();
         }
 
-        public void addVendedor(Vendedor unvendedor)
+        public void agregar_Vendedor(Vendedor unvendedor)
         {
             this.vendedores.Add(unvendedor);
+        }
+
+        public void agregar_Listado_de_Prendas(List<Prenda> listadoPrendas)
+        {
+            this.listado_de_prendas = listadoPrendas;
         }
     }
 }
