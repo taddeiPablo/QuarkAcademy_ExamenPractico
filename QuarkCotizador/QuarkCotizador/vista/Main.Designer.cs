@@ -460,7 +460,9 @@ namespace QuarkCotizador
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuarkCotizador";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);

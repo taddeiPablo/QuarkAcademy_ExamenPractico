@@ -19,9 +19,12 @@ namespace QuarkCotizador.presenter
             this.modelHistorial = CotizadorModel.sharedInstance();
         }
 
+        #region Metodos de la IViewHistorialVendedor
+        // aqui cargamos la grilla
         public void cargarGrilla()
         {
             this.viewHistorial.cargarGrilla_de_cotizaciones(this.modelHistorial.lista_cotizaciones());
         }
+        #endregion
     }
 }

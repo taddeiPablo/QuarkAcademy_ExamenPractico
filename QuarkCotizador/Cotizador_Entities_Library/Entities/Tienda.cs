@@ -28,10 +28,5 @@ namespace Cotizador_Entities_Library.Entities
         {
             this.vendedores.Add(unvendedor);
         }
-
-        public void buscarPrenda()
-        {
-
-        }
     }
 }

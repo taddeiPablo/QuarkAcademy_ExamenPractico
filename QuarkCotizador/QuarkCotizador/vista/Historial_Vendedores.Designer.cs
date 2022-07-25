@@ -61,7 +61,9 @@ namespace QuarkCotizador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 391);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Historial_Vendedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial_Vendedores";
             this.Load += new System.EventHandler(this.Historial_Vendedores_Load);
             this.groupBox1.ResumeLayout(false);

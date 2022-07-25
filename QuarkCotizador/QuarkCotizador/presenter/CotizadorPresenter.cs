@@ -19,6 +19,7 @@ namespace QuarkCotizador.presenter
         private int pantalonTipo = 5; //tipo pantalon
         private int tipoFiltro = 1; // filtro seleccionado o camisas o pantalones
 
+        #region Properties propias del Presenter
         public int CamisaTipoCuello
         {
             get => this.camisaTipoCuello;
@@ -44,19 +45,20 @@ namespace QuarkCotizador.presenter
             get => this.tipoFiltro;
             set => this.tipoFiltro = value;
         }
+        #endregion
 
         public CotizadorPresenter(IView viewmain)
         {
             this.viewMain = viewmain;
-            this.model = CotizadorModel.sharedInstance();//new CotizadorModel();
+            this.model = CotizadorModel.sharedInstance();
         }
 
+        #region Metodos que seran llamados en la GUI
         public void init()
         {
             viewMain.init_Tienda(this.model.nombre_tienda(), this.model.direccion_tienda());
             viewMain.init_Vendedor(this.model.nombre_apellido_Vendedor(), this.model.cod_vendedor());
         }
-
         public void limpiar_filtro()
         {
             this.camisaTipoCuello = 1;
@@ -65,7 +67,6 @@ namespace QuarkCotizador.presenter
             this.pantalonTipo = 5;
             this.tipoFiltro = 1;
         }
-
         public void filtrar_prendas()
         {
             TipoFiltro Tipo_filtro = (TipoFiltro)this.tipoFiltro;
@@ -83,10 +84,10 @@ namespace QuarkCotizador.presenter
                     break;
             }
         }
-        
         public void cotizar(int cantidadPrendas)
         {
             this.viewMain.mostrarCotizacionFinal(this.model.Cotizador(cantidadPrendas, this.tipoFiltro));
         }
+        #endregion
     }
 }

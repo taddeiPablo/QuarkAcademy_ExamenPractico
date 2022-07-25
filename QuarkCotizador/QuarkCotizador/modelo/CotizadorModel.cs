@@ -21,8 +21,8 @@ namespace QuarkCotizador.modelo
         private Camisa _Camisa = null;
         private Pantalon _Pantalon = null;
 
+        #region Implementacion de un singleton
         private static CotizadorModel cotizadormodel = null;
-
         public static CotizadorModel sharedInstance()
         {
             if (cotizadormodel == null)
@@ -31,10 +31,12 @@ namespace QuarkCotizador.modelo
             }
             return cotizadormodel;
         }
+        #endregion
 
+        #region properties
         public String cod_vendedor()
         {
-            return "#" + " " +Convert.ToString(_vendedor.CodVendedor);
+            return "#" + " " + Convert.ToString(_vendedor.CodVendedor);
         }
         public String nombre_apellido_Vendedor()
         {
@@ -48,6 +50,9 @@ namespace QuarkCotizador.modelo
         {
             return _tienda.Direccion;
         }
+        #endregion
+
+        #region Armado de las cotizaciones
         public double Cotizador(int cantidadPrendas, int tipoFiltro)
         {
             int descuentoCamisas = 10;
@@ -67,11 +72,13 @@ namespace QuarkCotizador.modelo
                     double procentajeAumento = totalParcial * aumentoCamisas / 100;
                     total_con_descuento = totalParcial - porcentajeDescuento;
                     total_cotizacion = total_con_descuento + procentajeAumento;
-                }else if(_Camisa.Tipo_manga == TipoPrenda.Manga_corta)
+                }
+                else if (_Camisa.Tipo_manga == TipoPrenda.Manga_corta)
                 {
                     double porcentajeDescuento = totalParcial * descuentoCamisas / 100;
                     total_cotizacion = totalParcial - porcentajeDescuento;
-                }else if(_Camisa.Tipo_Cuello == TipoPrenda.Cuello_mao)
+                }
+                else if (_Camisa.Tipo_Cuello == TipoPrenda.Cuello_mao)
                 {
                     double porcentajeAumento = totalParcial * aumentoCamisas / 100;
                     total_cotizacion = totalParcial + porcentajeAumento;
@@ -106,10 +113,9 @@ namespace QuarkCotizador.modelo
             }
             return total_cotizacion;
         }
-
         private void cargarCotizacion(Cotizacion nuevaCotizacion)
         {
-            foreach ( Vendedor item in _tienda.Vendedores)
+            foreach (Vendedor item in _tienda.Vendedores)
             {
                 if (item.CodVendedor == _vendedor.CodVendedor)
                 {
@@ -117,7 +123,6 @@ namespace QuarkCotizador.modelo
                 }
             }
         }
-
         public List<Cotizacion> lista_cotizaciones()
         {
             List<Cotizacion> historial = null;
@@ -131,14 +136,17 @@ namespace QuarkCotizador.modelo
             }
             return historial;
         }
+        #endregion
 
         public CotizadorModel()
         {
             _vendedor = new Vendedor(CreacionIds.codVendedor(), "Pablo", "Taddei");
-            _tienda = new Tienda("El shaddai", "calle 880 N°: 3324 Quilmes");
+            _tienda = new Tienda("El Shaddai", "calle 880 N°: 3324 Quilmes");
             _tienda.addVendedor(_vendedor);
             _tienda.Listado_de_prendas = creacion_listado_de_prendas();
         }
+
+        #region Creacion del stock + filtros
         private List<Prenda> creacion_listado_de_prendas()
         {
             List<Prenda> listado_prendas = new List<Prenda>();
@@ -154,7 +162,7 @@ namespace QuarkCotizador.modelo
             listado_prendas.Add(new Camisa(TipoPrenda.Cuello_comun, TipoPrenda.Manga_larga, 1900, 175, Calidad.Premium));
             // 1500 pantalones chupines
             listado_prendas.Add(new Pantalon(TipoPrenda.Chupin, Calidad.Standard, 1000, 750));
-            listado_prendas.Add(new Pantalon(TipoPrenda.Chupin,Calidad.Premium, 1900, 750));
+            listado_prendas.Add(new Pantalon(TipoPrenda.Chupin, Calidad.Premium, 1900, 750));
             // 500 pantalones comunes
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Standard, 950, 250));
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Premium, 1100, 250));
@@ -162,6 +170,7 @@ namespace QuarkCotizador.modelo
         }
         public (string, string) filtroCamisas(int tipoManga, int tipoCuello, int calidad)
         {
+            _Camisa = null;
             foreach (Prenda item in _tienda.Listado_de_prendas)
             {
                 if (item is Camisa)
@@ -180,11 +189,12 @@ namespace QuarkCotizador.modelo
             }
             else
             {
-                return ("0", "0000");
+                return ("", "");
             }
         }
         public (string, string) filtroPantalones(int tipoPantalon, int calidad)
         {
+            _Pantalon = null;
             foreach (Prenda item in _tienda.Listado_de_prendas)
             {
                 if (item is Pantalon)
@@ -203,8 +213,9 @@ namespace QuarkCotizador.modelo
             }
             else
             {
-                return ("0", "0000");
-            }            
+                return ("", "");
+            }
         }
+        #endregion
     }
 }

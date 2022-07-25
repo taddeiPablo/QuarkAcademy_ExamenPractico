@@ -21,7 +21,7 @@ namespace QuarkCotizador
         {
             InitializeComponent();
         }
-
+        #region Metodos_IVEW - metodos por los cueles el modelo nos actualiza la interface grafica
         public void init_Tienda(string nombreTienda, string direccion)
         {
             nombre_tienda.Text = nombreTienda;
@@ -34,9 +34,22 @@ namespace QuarkCotizador
         }
         public void valores_filtros(string unidadStock, string precioUnitario)
         {
-            LabelUnidadStock.Text = unidadStock;
-            labelPrecioUnitario.Text = precioUnitario;
+            if (unidadStock != string.Empty && precioUnitario != string.Empty)
+            {
+                LabelUnidadStock.Text = unidadStock;
+                labelPrecioUnitario.Text = precioUnitario;
+            }
+            else
+            {
+                MessageBox.Show("Stock no disponible !", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
         }
+        public void mostrarCotizacionFinal(double CotizacionFinal)
+        {
+            labelTotal.Text = Convert.ToString(CotizacionFinal);
+        }
+        #endregion
+
         private void Main_Load(object sender, EventArgs e)
         {
             presenter = new CotizadorPresenter(this);
@@ -59,6 +72,7 @@ namespace QuarkCotizador
             presenter.filtrar_prendas();
         }
 
+        #region Eventos de la GUI
         private void camisaRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioCamisa = (RadioButton)sender;
@@ -66,17 +80,19 @@ namespace QuarkCotizador
             checkBoxCuelloMao.Enabled = radioCamisa.Checked;
             if (radioCamisa.Checked)
             {
+                checkBoxChupin.Checked = !radioCamisa.Checked;
                 presenter.TipoFiltro = 1;
                 presenter.filtrar_prendas();
             }
         }
-
         private void PantalonesRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioPantalon = (RadioButton)sender;
             checkBoxChupin.Enabled = radioPantalon.Checked;
             if (radioPantalon.Checked)
             {
+                checkBoxMangaCorta.Checked = !radioPantalon.Checked;
+                checkBoxCuelloMao.Checked = !radioPantalon.Checked;
                 presenter.TipoFiltro = 2;
                 presenter.filtrar_prendas();
             }
@@ -105,8 +121,8 @@ namespace QuarkCotizador
             if (radioStandard.Checked)
             {
                 presenter.CalidadPrenda = 2;
+                presenter.filtrar_prendas();
             }
-            presenter.filtrar_prendas();
         }
         private void radioBtnPremium_CheckedChanged(object sender, EventArgs e)
         {
@@ -114,8 +130,8 @@ namespace QuarkCotizador
             if (radioPremium.Checked)
             {
                 presenter.CalidadPrenda = 1;
+                presenter.filtrar_prendas();
             }
-            presenter.filtrar_prendas();
         }
         private void recargarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -153,17 +169,18 @@ namespace QuarkCotizador
                 int cantidadPrendas = Convert.ToInt32(txtCantidad.Text);
                 presenter.cotizar(cantidadPrendas);
             }
+            else
+            {
+                MessageBox.Show("No se puede realizar una cotizacion sin un cantidad determinada", "¡ ATENCION !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtCantidad.Text, "[0-9]"))
             {
-               txtCantidad.Text = "";
+                txtCantidad.Text = "";
             }
         }
-        public void mostrarCotizacionFinal(double CotizacionFinal)
-        {
-            labelTotal.Text = Convert.ToString(CotizacionFinal);
-        }
+        #endregion
     }
 }
