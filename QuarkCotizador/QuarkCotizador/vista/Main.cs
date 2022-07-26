@@ -46,7 +46,7 @@ namespace QuarkCotizador
         }
         public void mostrarCotizacionFinal(double CotizacionFinal)
         {
-            labelTotal.Text = String.Format("{0:n0}", CotizacionFinal);
+            labelTotal.Text = String.Format("{0:0.##}", CotizacionFinal);
         }
         public void excepcion_stock(string mensaje)
         {
