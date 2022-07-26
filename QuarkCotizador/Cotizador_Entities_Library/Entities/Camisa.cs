@@ -37,5 +37,11 @@ namespace Cotizador_Entities_Library.Entities
             this.tcuello = tcuello;
             this.tmanga = tmanga;
         }
+
+        public override string ToString()
+        {
+            string valorColumna = "Camisa";
+            return valorColumna;
+        }
     }
 }

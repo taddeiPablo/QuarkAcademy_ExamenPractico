@@ -23,7 +23,7 @@ namespace QuarkCotizador.presenter
         // aqui cargamos la grilla
         public void cargarGrilla()
         {
-            this.viewHistorial.cargarGrilla_de_cotizaciones(this.modelHistorial.lista_cotizaciones());
+            this.viewHistorial.cargarGrilla_de_cotizaciones(this.modelHistorial.historialVendedor().Historial_Vendedor.HistorialCotizaciones);
         }
         #endregion
     }

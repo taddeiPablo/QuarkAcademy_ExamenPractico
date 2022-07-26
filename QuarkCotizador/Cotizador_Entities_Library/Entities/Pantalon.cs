@@ -30,5 +30,11 @@ namespace Cotizador_Entities_Library.Entities
         {
             this.tpantalon = tpantalon;
         }
+
+        public override string ToString()
+        {
+            string valorColumna = "Pantalon";
+            return valorColumna;
+        }
     }
 }

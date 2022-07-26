@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Cotizador_Entities_Library.Entities;
 using Cotizador_Entities_Library.Enums;
-using QuarkCotizador.modelo.utils;
 
 namespace QuarkCotizador.modelo
 {
@@ -18,9 +17,6 @@ namespace QuarkCotizador.modelo
     {
         private Vendedor _vendedor;
         private Tienda _tienda;
-        private Camisa _Camisa = null;
-        private Pantalon _Pantalon = null;
-        private string mensaje_de_error = "La cantidad ingresada supera las unidades en Stock ";
 
         #region Implementacion de un singleton
         private static CotizadorModel cotizadormodel = null;
@@ -53,101 +49,20 @@ namespace QuarkCotizador.modelo
         }
         #endregion
 
-        #region Armado de las cotizaciones
-        public double Cotizador(int cantidadPrendas, int tipoFiltro)
+        #region llamadas al cotizador
+        public double cotizador(int cantidadPrendas, int tipoFiltro)
         {
-            int descuentoCamisas = 10;
-            int aumentoCamisas = 3;
-            int descuentoPantalones = 12;
-            int aumentoPantalones = 30;
-            double total_con_descuento = 0.0;
-            double totalParcial = 0.0;
-            double total_cotizacion = 0.0;
-            Cotizacion nuevaCotizacion = null;
-            if (tipoFiltro == 1)
-            {
-                if (cantidadPrendas > _Camisa.Cant_Unidades_Stock)
-                    throw new Exception(mensaje_de_error);
-
-                totalParcial = _Camisa.Precio_Unitario * cantidadPrendas;
-                if (_Camisa.Tipo_Cuello == TipoPrenda.Cuello_mao && _Camisa.Tipo_manga == TipoPrenda.Manga_corta)
-                {
-                    double porcentajeDescuento = totalParcial * descuentoCamisas / 100;
-                    double procentajeAumento = totalParcial * aumentoCamisas / 100;
-                    total_con_descuento = totalParcial - porcentajeDescuento;
-                    total_cotizacion = total_con_descuento + procentajeAumento;
-                }
-                else if (_Camisa.Tipo_manga == TipoPrenda.Manga_corta)
-                {
-                    double porcentajeDescuento = totalParcial * descuentoCamisas / 100;
-                    total_cotizacion = totalParcial - porcentajeDescuento;
-                }
-                else if (_Camisa.Tipo_Cuello == TipoPrenda.Cuello_mao)
-                {
-                    double porcentajeAumento = totalParcial * aumentoCamisas / 100;
-                    total_cotizacion = totalParcial + porcentajeAumento;
-                }
-                else
-                {
-                    total_cotizacion = totalParcial;
-                }
-                nuevaCotizacion = new Cotizacion(CreacionIds.idCotizacion(), DateTime.Now, _vendedor.CodVendedor, _Camisa, cantidadPrendas, total_cotizacion);
-                cargarCotizacion(nuevaCotizacion);
-            }
-            else if (tipoFiltro == 2)
-            {
-                if (cantidadPrendas > _Pantalon.Cant_Unidades_Stock)
-                    throw new Exception(mensaje_de_error);
-
-                totalParcial = _Pantalon.Precio_Unitario * cantidadPrendas;
-                if (_Pantalon.Tipo_Calidad == Calidad.Premium)
-                {
-                    double porcentajeAumento = totalParcial * aumentoPantalones / 100;
-                    totalParcial = totalParcial + porcentajeAumento;
-                    if (_Pantalon.Tipo_Pantalon == TipoPrenda.Chupin)
-                    {
-                        double porcentajeDescuento = totalParcial * descuentoPantalones / 100;
-                        totalParcial = totalParcial - porcentajeDescuento;
-                    }
-                    total_cotizacion = totalParcial;
-                }
-                else
-                {
-                    total_cotizacion = totalParcial;
-                }
-                nuevaCotizacion = new Cotizacion(CreacionIds.idCotizacion(), DateTime.Now, _vendedor.CodVendedor, _Pantalon, cantidadPrendas, total_cotizacion);
-                cargarCotizacion(nuevaCotizacion);
-            }
-            return total_cotizacion;
+            return this._tienda.Cotizador(cantidadPrendas, tipoFiltro);
         }
-        private void cargarCotizacion(Cotizacion nuevaCotizacion)
+        public Vendedor historialVendedor()
         {
-            foreach (Vendedor item in _tienda.Vendedores)
-            {
-                if (item.CodVendedor == _vendedor.CodVendedor)
-                {
-                    item.Historial_Vendedor.agregarCotizacion(nuevaCotizacion);
-                }
-            }
-        }
-        public List<Cotizacion> lista_cotizaciones()
-        {
-            List<Cotizacion> historial = null;
-            foreach (Vendedor item in _tienda.Vendedores)
-            {
-                if (item.CodVendedor == _vendedor.CodVendedor)
-                {
-                    historial = item.Historial_Vendedor.HistorialCotizaciones;
-                    break;
-                }
-            }
-            return historial;
+            return this._tienda.HistorialVendedor();
         }
         #endregion
 
         public CotizadorModel()
         {
-            _vendedor = new Vendedor(CreacionIds.codVendedor(), "Pablo", "Taddei");
+            _vendedor = new Vendedor(codVendedor(), "Pablo", "Taddei");
             _tienda = new Tienda("El Shaddai", "calle 880 N°: 3324 Quilmes");
             _tienda.agregar_Vendedor(_vendedor);
             _tienda.agregar_Listado_de_Prendas(creacion_listado_de_prendas());
@@ -175,54 +90,22 @@ namespace QuarkCotizador.modelo
             listado_prendas.Add(new Pantalon(TipoPrenda.Comun, Calidad.Premium, 1100, 250));
             return listado_prendas;
         }
-        public (int, double) filtroCamisas(int tipoManga, int tipoCuello, int calidad)
+        public (int, double) modelfiltroCamisas(int tipoManga, int tipoCuello, int calidad)
         {
-            _Camisa = null;
-            foreach (Prenda item in _tienda.Listado_de_prendas)
-            {
-                if (item is Camisa)
-                {
-                    Camisa camisa = (Camisa)item;
-                    if (camisa.Tipo_manga == (TipoPrenda)tipoManga && camisa.Tipo_Cuello == (TipoPrenda)tipoCuello && camisa.Tipo_Calidad == (Calidad)calidad)
-                    {
-                        _Camisa = camisa;
-                        break;
-                    }
-                }
-            }
-            if (_Camisa != null)
-            {
-                return (_Camisa.Cant_Unidades_Stock, _Camisa.Precio_Unitario);
-            }
-            else
-            {
-                return (0, 0.0);
-            }
+            return _tienda.filtroCamisas(tipoManga, tipoCuello, calidad);
         }
-        public (int, double) filtroPantalones(int tipoPantalon, int calidad)
+        public (int, double) modelfiltroPantalones(int tipoPantalon, int calidad)
         {
-            _Pantalon = null;
-            foreach (Prenda item in _tienda.Listado_de_prendas)
-            {
-                if (item is Pantalon)
-                {
-                    Pantalon pantalon = (Pantalon)item;
-                    if (pantalon.Tipo_Pantalon == (TipoPrenda)tipoPantalon && pantalon.Tipo_Calidad == (Calidad)calidad)
-                    {
-                        _Pantalon = pantalon;
-                        break;
-                    }
-                }
-            }
-            if (_Pantalon != null)
-            {
-                return (_Pantalon.Cant_Unidades_Stock, _Pantalon.Precio_Unitario);
-            }
-            else
-            {
-                return (0, 0.0);
-            }
+            return _tienda.filtroPantalones(tipoPantalon, calidad);
         }
         #endregion
+
+        // metodo cuyo fin es crear un codVendedor unico
+        private static int codVendedor()
+        {
+            Random random = new Random();
+            int codVendedor = random.Next(100, 10000);
+            return codVendedor;
+        }
     }
 }

@@ -52,7 +52,6 @@
     <Compile Include="Iinterfaces\IView.cs" />
     <Compile Include="Iinterfaces\IViewHistorialVendedor.cs" />
     <Compile Include="modelo\CotizadorModel.cs" />
-    <Compile Include="modelo\utils\CreacionIds.cs" />
     <Compile Include="presenter\CotizadorPresenter.cs" />
     <Compile Include="presenter\HistorialPresenter.cs" />
     <Compile Include="vista\Historial_Vendedores.cs">
