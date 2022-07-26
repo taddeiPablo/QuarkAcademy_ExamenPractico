@@ -1,0 +1,5 @@
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\bin\Release\Cotizador_Entities_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\bin\Release\Cotizador_Entities_Library.pdb
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Release\Cotizador_Entities_Library.csproj.CoreCompileInputs.cache
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Release\Cotizador_Entities_Library.dll
+C:\Users\pablo\Documents\GitHub\QuarkAcademy_ExamenPractico\QuarkCotizador\Cotizador_Entities_Library\obj\Release\Cotizador_Entities_Library.pdb
